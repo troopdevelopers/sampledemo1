@@ -15,8 +15,8 @@ public class TimeDynamo_Login {
 	@Test
 	public  void testt() {
 		WebDriver driver;
-		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-		WebDriverManager.chromedriver().setup();			
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		//WebDriverManager.chromedriver().setup();			
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
