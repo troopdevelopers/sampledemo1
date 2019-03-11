@@ -16,12 +16,13 @@ public class TimeDynamo_Login {
 	@Test
 	public  void testt() {
 		WebDriver driver;
-		System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/tools/chromedriver/chromedriver");
 		//WebDriverManager.chromedriver().setup();			
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-		driver=new ChromeDriver(options);
+		//ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--no-sandbox");
+		//options.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
