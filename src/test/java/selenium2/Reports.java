@@ -23,7 +23,7 @@ public class Reports {
 	public static ExtentReports extent;
 	public static ExtentTest logger;
 	ScreenRecorder sr;
-	boolean recordVideo=true;
+	boolean recordVideo=false;
 
 	@BeforeClass
 
@@ -44,10 +44,11 @@ public class Reports {
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 		
-	if(recordVideo)
-		 sr=new ScreenRecorder();
-		 sr.startRecording("rec");
+	if(recordVideo) {
+//		 sr=new ScreenRecorder();
+//		 sr.startRecording("rec");
 
+	}
 	}
 
 	 @AfterMethod
