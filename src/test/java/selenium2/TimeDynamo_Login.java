@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TimeDynamo_Login {
 
@@ -15,8 +15,8 @@ public class TimeDynamo_Login {
 	@Test
 	public  void testt() {
 		WebDriver driver;
-		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		//WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
