@@ -15,7 +15,7 @@ public class TimeDynamo_Login {
 	@Test
 	public  void testt() {
 		WebDriver driver;
-		//System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
