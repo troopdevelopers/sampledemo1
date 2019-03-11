@@ -16,7 +16,15 @@ public class TimeDynamo_Login {
 	public  void testt() {
 		WebDriver driver;
 		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
+		
+		
+		chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
+			
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
