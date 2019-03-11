@@ -4,31 +4,35 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TimeDynamo_Login {
+WebDriver driver;
 
-	
-	@Test
-	public  void testt() {
-		WebDriver driver;
-		//System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/tools/chromedriver/chromedriver");
-		//WebDriverManager.chromedriver().setup();			
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.setBinary("/opt/google/chrome/google-chrome");
-		driver=new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.id("bG9naW5Vc2VybmFtZUVsZW1lbnQ")).sendKeys("admin@tvisha.com");
-		driver.findElement(By.id("bG9naW5QYXNzd29yZEVsZW1lbnQ")).sendKeys("Admin@1201@");
-		driver.findElement(By.id("bG9naW5CdG4")).click();
-		
-	}
+@Test
+public void testt() {
+
+setup();
+
+driver.manage().window().maximize();
+driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
+driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+driver.findElement(By.id("bG9naW5Vc2VybmFtZUVsZW1lbnQ")).sendKeys("admin@tvisha.com");
+driver.findElement(By.id("bG9naW5QYXNzd29yZEVsZW1lbnQ")).sendKeys("Admin@1201@");
+driver.findElement(By.id("bG9naW5CdG4")).click();
+
+}
+
+public void setup() {
+DesiredCapabilities caps = new DesiredCapabilities();
+//	caps.setJavascriptEnabled(true); // not really needed: JS enabled by default
+//caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "/home/ec2-user/phantomjs");
+caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "D:\\AWS-Hosting\\Jenkins\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
+
+driver = new PhantomJSDriver(caps);
+}
 }
