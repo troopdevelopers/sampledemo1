@@ -16,10 +16,11 @@ public class TimeDynamo_Login {
 	@Test
 	public  void testt() {
 		WebDriver driver;
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
 		//WebDriverManager.chromedriver().setup();			
 		ChromeOptions options = new ChromeOptions();
-		options.setBinary("/usr/bin/google-chrome");
+		options.addArguments("--no-sandbox");
+		options.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
