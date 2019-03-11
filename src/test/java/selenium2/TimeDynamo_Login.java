@@ -10,13 +10,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 
-public class TimeDynamo_Login {
+public class TimeDynamo_Login extends Reports {
 WebDriver driver;
 
 @Test
 public void testt() {
+	
 
 setup();
+logger=extent.createTest("test");
 
 driver.manage().window().maximize();
 driver.get("http://tvishasystems.com/webdemo/timedynamo_testing/public/login");
