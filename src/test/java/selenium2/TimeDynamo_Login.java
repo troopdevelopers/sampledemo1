@@ -30,8 +30,8 @@ driver.findElement(By.id("bG9naW5CdG4")).click();
 public void setup() {
 DesiredCapabilities caps = new DesiredCapabilities();
 //	caps.setJavascriptEnabled(true); // not really needed: JS enabled by default
-//caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "/home/ec2-user/phantomjs");
-caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "D:\\AWS-Hosting\\Jenkins\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
+caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "/home/ec2-user/phantomjs");
+//caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "D:\\AWS-Hosting\\Jenkins\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
 
 driver = new PhantomJSDriver(caps);
 }
